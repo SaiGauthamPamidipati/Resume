@@ -18,7 +18,7 @@ public class SendMail extends HttpServlet{
 		 String result;
 		 PrintWriter out = res.getWriter();
 		   // Recipient's email ID needs to be mentioned.
-		   String to = "sg.pamidipati@gmail.com";
+		   String to = "EMAIL ID WHERE YOU WANT TO SEND MAILS";
 
 		   // Sender's email ID needs to be mentioned
 		   String from = req.getParameter("email");
@@ -47,7 +47,7 @@ public class SendMail extends HttpServlet{
 				    new javax.mail.Authenticator(){
 				        protected PasswordAuthentication getPasswordAuthentication() {
 				            return new PasswordAuthentication(
-				                "gautham9.scale@gmail.com", "Rainaholi");// Specify the Username and the PassWord
+				                "DUMMY EMAIL FOR FORWARDING MAIL", "DUMMY PASSWORD");// Specify the Username and the PassWord
 				        }
 		   });
 
@@ -56,12 +56,12 @@ public class SendMail extends HttpServlet{
 		   try {
 			   
 			   Transport transport = mailSession.getTransport("smtp");
-		        transport.connect(host, "gautham9.scale@gmail.com", "Rainaholi");
+		        transport.connect(host, "DUMMY EMAIL FOR FORWARDING MAIL", "DUMMY PASSWORD");
 		      // Create a default MimeMessage object.
 		      MimeMessage message = new MimeMessage(mailSession);
 		      
 		      // Set From: header field of the header.
-		      message.setFrom(new InternetAddress("gautham9.scale@gmail.com"));
+		      message.setFrom(new InternetAddress("DUMMY EMAIL FOR FORWARDING MAIL"));
 		      
 		      // Set To: header field of the header.
 		      message.addRecipient(Message.RecipientType.TO,
